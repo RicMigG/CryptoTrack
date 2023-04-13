@@ -3,13 +3,14 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Ricardo Gago -- Developer -- https://gitlab.com/ricardomgago
 
 # THANKS
 
-    <name>
+    To all the good and ingenious folk who have helped me get here and provide us with the tools to make the world a
+    better place, one line at a time :)
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5
+    CSS3, HTML5, Bootstrap
     Apache Server Configs, jQuery, Modernizr, Normalize.css

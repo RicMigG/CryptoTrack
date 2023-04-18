@@ -6,8 +6,7 @@ define(["views/crypto-view", "services/crypto-service"], function (
   var internals = {};
 
   externals.start = function () {
-    cryptoService.startAjax();
-    cryptoView.activateEventHandlers();
+    cryptoView.prepareViewSingleCrypto();
   };
 
   return externals;

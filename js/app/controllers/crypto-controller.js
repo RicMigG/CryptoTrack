@@ -1,14 +1,20 @@
-define(["views/crypto-view", "services/crypto-service"], function (
-  cryptoView,
-  cryptoService
-) {
-  var externals = {};
+define("controllers/crypto-controller", [
+  "views/crypto-view",
+  "services/crypto-service",
+], function (cryptoView, cryptoService) {
+  var cryptoController = {};
   var internals = {};
 
-  externals.start = function () {
+  cryptoController.start = function () {
+    console.log("crypto-controller loaded!");
+    cryptoView.prepareViewCryptoController();
     cryptoService.startAjax();
-    cryptoView.activateEventHandlers();
   };
 
-  return externals;
+  cryptoController.userClicked = function (specificCryptoName) {
+    cryptoService.setSelectedCrypto(specificCryptoName);
+    window.location.hash = "#cryptodetails";
+  };
+
+  return cryptoController;
 });

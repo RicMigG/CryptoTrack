@@ -1,4 +1,4 @@
-define(function () {
+define(["require"], function (require) {
   let internals = {};
 
   let externals = {};
@@ -6,7 +6,7 @@ define(function () {
   internals.populateWebsite = (allCoinsData) => {
     for (let index = 1; index < 25; index++) {
       const element = allCoinsData.data[index - 1];
-      let appendToTarget = `#row-0`;
+      let appendToTarget = "#row-0";
 
       $(`<div class="col-sm-3">
                 <div id="${element.id}" class="card border-0 cardClick">
@@ -35,7 +35,10 @@ define(function () {
       }
       if (clickedElement) {
         let parentId = clickedElement.id;
-        alert(parentId);
+        require(["controllers/crypto-controller"], function (cryptoController) {
+          console.log(cryptoController);
+          cryptoController.userClicked(parentId);
+        });
       }
     });
   };
@@ -44,11 +47,20 @@ define(function () {
     $(".row").empty();
   };
 
+  internals.defaultStartAllCryptos = () => {
+    $(".headerText").text("Most popular cryptos");
+  };
+
   externals.insertDataIntoWebsite = (coinsData) => {
     internals.populateWebsite(coinsData);
   };
 
-  externals.prepareViewForNewLoading = () => {
+  externals.prepareViewCryptoController = () => {
+    internals.clearPanel();
+    internals.defaultStartAllCryptos();
+  };
+
+  externals.prepareViewSingleCrypto = () => {
     internals.clearPanel();
   };
 

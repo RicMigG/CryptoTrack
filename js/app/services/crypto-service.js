@@ -16,7 +16,7 @@ define(["views/crypto-view"], function (cryptoView) {
         internals.passInformationToView(response);
       })
       .catch((error) => {
-        throw Error("Failure with AJAX request: " + error);
+        throw Error("Failure with AJAX request: " + error + error.log);
       });
   };
 
@@ -26,6 +26,15 @@ define(["views/crypto-view"], function (cryptoView) {
 
   externals.startAjax = () => {
     internals.getAllInformation();
+  };
+
+  externals.setSelectedCrypto = (selectedCrypto) => {
+    internals.selectedCryptoDetails = selectedCrypto;
+  };
+
+  externals.getSelectedCrypto = () => {
+    // Using bitcoin as a failsafe coin
+    return selectedCrypto ? selectedCrypto : "bitcoin";
   };
 
   return externals;

@@ -8,9 +8,7 @@ This project was built during my attendance at Academia de Códigos 14-week Inte
 
 CryptoTrack was built using the following technologies:
 
-- Frontend: HTML5, CSS3, Bootstrap, jQuery
-- Backend: Java, Spring Boot, RESTful API, Maven
-- Hosting: Heroku
+- Frontend: HTML5, CSS3, Bootstrap, JavaScript, jQuery, Chart.js
 
 ## Screenshots
 
@@ -26,7 +24,7 @@ You can find screenshots of the main page and the specific coin page below:
 
 ## Getting Started
 
-To check out CryptoTrack, please visit the following link: https://cryptotrack-app.herokuapp.com/
+To check out CryptoTrack, please visit the following link: https://cryptotrack-ba57.onrender.com/
 
 ## Credits
 
@@ -42,5 +40,4 @@ THANKS
 - To all the good and ingenious folk who have helped me get here and provide us with the tools to make the world a better place, one line at a time :)
 
 TECHNOLOGY COLOPHON
-- CSS3, HTML5, Bootstrap
-- Apache Server Configs, jQuery, Modernizr, Normalize.css
+- CSS3, HTML5, Bootstrap, JavaScript, jQuery, Modernizr, Normalize

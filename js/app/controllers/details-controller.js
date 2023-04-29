@@ -6,7 +6,12 @@ define(["views/crypto-view", "services/crypto-service"], function (
   var internals = {};
 
   externals.start = function () {
-    cryptoView.prepareViewSingleCrypto();
+    if (cryptoService.getSelectedCryptoName() != null) {
+      cryptoView.prepareViewSingleCrypto(cryptoService.getSelectedCryptoName());
+      cryptoService.passCoinInfoToView(cryptoService.getSelectedCryptoName());
+    } else {
+      window.location.hash = "#cryptotrack";
+    }
   };
 
   return externals;

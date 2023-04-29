@@ -46,7 +46,9 @@
         id="mainNav"
       >
         <div class="container">
-          <a class="navbar-brand" href="#page-top">CryptoTrack</a>
+          <a class="navbar-brand" href="#page-top"
+            >CryptoTrack - a Single-page application project</a
+          >
           <button
             class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
             type="button"
@@ -59,29 +61,11 @@
             Menu
             <i class="fas fa-bars"></i>
           </button>
-          <form class="d-flex input-group w-auto">
-            <input
-              type="search"
-              class="form-control"
-              placeholder="Search"
-              aria-label="Search"
-              aria-describedby="search-addon"
-            />
-            <span class="input-group-text border-0" id="search-addon">
-              <i class="fas fa-search"></i>
-            </span>
-          </form>
         </div>
       </nav>
       <!-- Masthead-->
       <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
-          <!-- Masthead Avatar Image-->
-          <img
-            class="masthead-avatar mb-5"
-            src="assets/img/avataaars.svg"
-            alt="..."
-          />
           <!-- Masthead Heading-->
           <h1 class="masthead-heading text-uppercase mb-0">CryptoTrack</h1>
           <!-- Icon Divider-->
@@ -111,53 +95,13 @@
             <div class="divider-custom-line"></div>
           </div>
           <!-- Crypto Grids-->
-          <div class="card-group">
-            <div id="cardContainer">
+          <div id="sci" class="card-group">
+            <div id="cardContainer" class="col-12">
               <div id="row-0" class="row"></div>
             </div>
           </div>
         </div>
       </section>
-      <!-- Footer-->
-      <footer class="footer text-center">
-        <div class="container">
-          <div class="row">
-            <!-- Footer Location-->
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <h4 class="text-uppercase mb-4">Location</h4>
-              <p class="lead mb-0">
-                ***** *****
-                <br />
-                ***** *****
-              </p>
-            </div>
-            <!-- Footer Social Icons-->
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <h4 class="text-uppercase mb-4">Around the Web</h4>
-              <a class="btn btn-outline-light btn-social mx-1" href="#!"
-                ><i class="fab fa-fw fa-facebook-f"></i
-              ></a>
-              <a class="btn btn-outline-light btn-social mx-1" href="#!"
-                ><i class="fab fa-fw fa-twitter"></i
-              ></a>
-              <a class="btn btn-outline-light btn-social mx-1" href="#!"
-                ><i class="fab fa-fw fa-linkedin-in"></i
-              ></a>
-              <a class="btn btn-outline-light btn-social mx-1" href="#!"
-                ><i class="fab fa-fw fa-dribbble"></i
-              ></a>
-            </div>
-            <!-- Footer About Text-->
-            <div class="col-lg-4">
-              <h4 class="text-uppercase mb-4">About CryptoTrack</h4>
-              <p class="lead mb-0">
-                CryptoTrack is a simple single page APP that shows real time
-                crypto currency information for the 100 most popular cryptos.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
       <div class="copyright py-4 text-center text-white">
         <div class="container">
           <small>Copyright &copy; CryptoTrack 2023</small>
@@ -180,7 +124,7 @@
         );
     </script>
     <script src="js/plugins.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script
       data-main="js/app/main"
       src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"

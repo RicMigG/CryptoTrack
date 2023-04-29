@@ -6,7 +6,6 @@ define("controllers/crypto-controller", [
   var internals = {};
 
   cryptoController.start = function () {
-    console.log("crypto-controller loaded!");
     cryptoView.prepareViewCryptoController();
     cryptoService.startAjax();
   };

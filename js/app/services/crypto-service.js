@@ -24,6 +24,53 @@ define(["views/crypto-view"], function (cryptoView) {
     cryptoView.insertDataIntoWebsite(cryptoData);
   };
 
+  internals.getSpecificCoinJSON = async (coinName) => {
+    let coinInfo, coinHistory;
+    await fetch(`https://api.coincap.io/v2/assets/${coinName}`, {
+      headers: {
+        "Accept-Encoding": "gzip, deflate",
+        Authorization: "Bearer 73c931ec-a0d2-4a4f-8cc8-030689b7d007",
+      },
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        coinInfo = response.data;
+      })
+      .catch((error) => {
+        throw Error(
+          "Failure with single coin AJAX request: " + error + error.log
+        );
+      });
+    await fetch(
+      `https://api.coincap.io/v2/assets/${coinName}/history?interval=d1
+    `,
+      {
+        headers: {
+          "Accept-Encoding": "gzip, deflate",
+          Authorization: "Bearer 73c931ec-a0d2-4a4f-8cc8-030689b7d007",
+        },
+      }
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        coinHistory = response;
+      })
+      .catch((error) => {
+        throw Error(
+          "Failure with single coin AJAX request: " + error + error.log
+        );
+      });
+    cryptoView.loadSingleCoinPage(coinInfo, coinHistory);
+  };
+
+  externals.passCoinInfoToView = (coinName) => {
+    internals.getSpecificCoinJSON(coinName);
+  };
+
   externals.startAjax = () => {
     internals.getAllInformation();
   };
@@ -32,9 +79,8 @@ define(["views/crypto-view"], function (cryptoView) {
     internals.selectedCryptoDetails = selectedCrypto;
   };
 
-  externals.getSelectedCrypto = () => {
-    // Using bitcoin as a failsafe coin
-    return selectedCrypto ? selectedCrypto : "bitcoin";
+  externals.getSelectedCryptoName = () => {
+    return internals.selectedCryptoDetails;
   };
 
   return externals;
